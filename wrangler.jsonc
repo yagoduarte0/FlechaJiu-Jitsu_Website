@@ -3,10 +3,9 @@
   "compatibility_date": "2026-09-01",
 
   // Site estatico: sem "main", o Worker apenas serve os arquivos gerados
-  // pelo `npm run build`. O not_found_handling devolve o index.html para
-  // qualquer rota desconhecida, evitando 404 em links diretos.
+  // pelo `npm run build`. Sem not_found_handling, uma URL inexistente
+  // devolve 404 de verdade em vez de 200 com o index.html.
   "assets": {
-    "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    "directory": "./dist"
   }
 }
