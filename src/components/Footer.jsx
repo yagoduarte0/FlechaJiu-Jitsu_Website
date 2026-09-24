@@ -36,7 +36,7 @@ export default function Footer() {
 
             <p className="footer__contact">
               Give us a call:{' '}
-              <a href="tel:7029865618">(702) 986-5618</a>
+              <a href="tel:+17029865618">(702) 986-5618</a>
             </p>
             <p className="footer__contact">
               <a href="mailto:support@flechabjj.com">support@flechabjj.com</a>
