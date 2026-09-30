@@ -7,8 +7,8 @@ const STATS = [
 ]
 
 const TIMELINE = [
-  { year: 'Age 8',  text: 'Began training under Master Fernando Pinduka — Monte Libano' },
-  { year: 'Age 13', text: 'Joined IBJJF Hall of Famer Roberto "Roleta" Magalhães — Barra da Tijuca' },
+  { year: '1991',  text: 'Began training under Master Fernando Pinduka — Monte Libano' },
+  { year: '1996', text: 'Joined IBJJF Hall of Famer Roberto "Roleta" Magalhães — Barra da Tijuca' },
   { year: '2006',   text: 'Black belt under Master Carlos Gracie Jr. at age 23' },
   { year: 'Today',  text: '5th-degree black belt, teaching in Henderson, Nevada' },
 ]
@@ -64,13 +64,12 @@ export default function Professor() {
             <p className="professor__bio">
               At 13, he joined <strong>IBJJF Hall of Famer Roberto "Roleta" Magalhães</strong> in
               Barra da Tijuca — one of the most technical and creative black belts in the history
-              of the sport. Inspired by Roleta's mentorship, Pedro became a formidable competitor,
-              dominating state, national, and world championships.
+              of the sport. Inspired by Roleta's mentorship, Pedro became a formidable competitor.
             </p>
             <p className="professor__bio">
               Under the legendary <strong>Master Carlos Gracie Jr.</strong>, founder of the IBJJF,
               Pedro earned his brown and black belts — achieving black belt status in{' '}
-              <strong>2006 at just 23 years old</strong>. Since then, he has embraced Jiu-Jitsu as
+              <strong>2006 at 23 years old</strong>. Since then, he has embraced Jiu-Jitsu as
               a lifestyle, teaching with a focus on technical precision and philosophical depth.
             </p>
 
