@@ -1,5 +1,5 @@
 import scrollTo from '../utils/scrollTo'
-import { TRIAL_MAILTO } from '../data/links'
+import { TRIAL_MAILTO, ENROLL_ANCHOR } from '../data/links'
 
 export default function Hero() {
   return (
@@ -28,6 +28,13 @@ export default function Hero() {
         <div className="hero__actions">
           <a href={TRIAL_MAILTO} className="btn btn--primary btn--lg">
             Start Free Trial
+          </a>
+          <a
+            href={ENROLL_ANCHOR}
+            className="btn btn--ghost btn--lg"
+            onClick={e => { e.preventDefault(); scrollTo(ENROLL_ANCHOR) }}
+          >
+            Enroll Now
           </a>
           <a
             href="#about"
