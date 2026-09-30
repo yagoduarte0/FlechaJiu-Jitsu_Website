@@ -1,18 +1,15 @@
 import { useState, useEffect, useCallback } from 'react'
+import scrollTo from '../utils/scrollTo'
+import { TRIAL_MAILTO, ENROLL_ANCHOR } from '../data/links'
 
 const LINKS = [
   { label: 'First Class', href: '#first-class' },
   { label: 'About',       href: '#about'        },
   { label: 'Schedule',    href: '#schedule'     },
   { label: 'Pricing',     href: '#pricing'      },
+  { label: 'Enroll',      href: ENROLL_ANCHOR   },
   { label: 'Contact',     href: '#contact'      },
 ]
-
-function scrollTo(id) {
-  const el = document.querySelector(id)
-  if (!el) return
-  window.scrollTo({ top: el.offsetTop - 96, behavior: 'smooth' })
-}
 
 export default function Nav() {
   const [scrolled, setScrolled]   = useState(false)
@@ -57,9 +54,9 @@ export default function Nav() {
         </ul>
 
         <a
-          href="#contact"
+          href={TRIAL_MAILTO}
           className="btn btn--primary nav__cta"
-          onClick={e => handleLink(e, '#contact')}
+          onClick={() => setMenuOpen(false)}
         >
           Free Trial
         </a>

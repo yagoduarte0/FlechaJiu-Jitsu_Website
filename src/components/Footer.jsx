@@ -1,17 +1,68 @@
+import { ENROLL_ANCHOR, ENROLL_URL, WAIVER_PDF } from '../data/links'
+
 export default function Footer() {
   return (
-    <footer className="footer" id="contact">
+    <footer className="footer">
 
       <div className="footer__top">
         <div className="container">
 
+          <div className="footer__enroll" id={ENROLL_ANCHOR.slice(1)}>
+            <p className="eyebrow">Ready to Join?</p>
+            <h2 className="footer__enroll-title">
+              Enroll in <span className="text--green">30 Seconds</span>
+            </h2>
+            <p className="footer__enroll-text">
+              Point your phone camera at the code below — it opens our enrollment form,
+              where you pick your plan and sign up on the spot. No app, no account needed.
+            </p>
+
+            <div className="footer__qr">
+              <img
+                src="/assets/images/enroll-qr.png"
+                alt="QR code that opens the Flecha Jiu-Jitsu enrollment form"
+                width="220"
+                height="220"
+              />
+            </div>
+
+            <ol className="footer__enroll-steps">
+              <li>Open the camera app on your phone.</li>
+              <li>Hold it over the code until the link appears.</li>
+              <li>Tap the link and fill out the enrollment form.</li>
+            </ol>
+
+            {ENROLL_URL && (
+              <a
+                href={ENROLL_URL}
+                className="btn btn--primary footer__enroll-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Or open the form here
+              </a>
+            )}
+          </div>
+
           <div className="footer__waiver">
-            <a href="#" className="waiver-link">
-              <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
-                <path d="M4 2l6 4-6 4V2z" />
-              </svg>
-              Sign Our Waiver
-            </a>
+            {WAIVER_PDF ? (
+              <a href={WAIVER_PDF} className="waiver-link" download>
+                <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+                  <path d="M6 1v6m0 0L3.5 4.5M6 7l2.5-2.5M2 10h8" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Download Our Waiver
+              </a>
+            ) : (
+              <span className="waiver-link waiver-link--soon">
+                <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+                  <path d="M6 1v6m0 0L3.5 4.5M6 7l2.5-2.5M2 10h8" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Waiver PDF — coming soon
+              </span>
+            )}
+            <p className="footer__waiver-note">
+              Print it, sign it, and bring it with you to your first class.
+            </p>
           </div>
 
           <div className="footer__logos">
@@ -20,7 +71,7 @@ export default function Footer() {
             <img src="/assets/logos/roleta-logo.png"         alt="Roleta Jiu-Jitsu"    className="footer__logo-img" />
           </div>
 
-          <div className="footer__info">
+          <div className="footer__info" id="contact">
             <p className="footer__location-label">We are located at:</p>
 
             <address className="footer__address">

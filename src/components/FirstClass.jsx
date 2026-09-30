@@ -1,8 +1,4 @@
-function scrollTo(id) {
-  const el = document.querySelector(id)
-  if (!el) return
-  window.scrollTo({ top: el.offsetTop - 96, behavior: 'smooth' })
-}
+import { TRIAL_MAILTO } from '../data/links'
 
 const STEPS = [
   {
@@ -75,11 +71,7 @@ export default function FirstClass() {
         </div>
 
         <div className="first-class__cta fade-up">
-          <a
-            href="#contact"
-            className="btn btn--primary btn--lg"
-            onClick={e => { e.preventDefault(); scrollTo('#contact') }}
-          >
+          <a href={TRIAL_MAILTO} className="btn btn--primary btn--lg">
             Reserve My First Class
           </a>
           <p className="first-class__disclaimer">No gear, no experience, no pressure required.</p>

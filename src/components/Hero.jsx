@@ -1,8 +1,5 @@
-function scrollTo(id) {
-  const el = document.querySelector(id)
-  if (!el) return
-  window.scrollTo({ top: el.offsetTop - 96, behavior: 'smooth' })
-}
+import scrollTo from '../utils/scrollTo'
+import { TRIAL_MAILTO } from '../data/links'
 
 export default function Hero() {
   return (
@@ -29,11 +26,7 @@ export default function Hero() {
           mental resilience, physical strength, and unshakable confidence.
         </p>
         <div className="hero__actions">
-          <a
-            href="#contact"
-            className="btn btn--primary btn--lg"
-            onClick={e => { e.preventDefault(); scrollTo('#contact') }}
-          >
+          <a href={TRIAL_MAILTO} className="btn btn--primary btn--lg">
             Start Free Trial
           </a>
           <a

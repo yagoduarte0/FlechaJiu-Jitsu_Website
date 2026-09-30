@@ -1,10 +1,6 @@
+import scrollTo from '../utils/scrollTo'
+import { TRIAL_MAILTO, ENROLL_ANCHOR } from '../data/links'
 import { MONTHLY_PLANS, PREPAID_PLANS } from '../data/pricing'
-
-function scrollTo(id) {
-  const el = document.querySelector(id)
-  if (!el) return
-  window.scrollTo({ top: el.offsetTop - 96, behavior: 'smooth' })
-}
 
 export default function Pricing() {
   return (
@@ -71,13 +67,18 @@ export default function Pricing() {
 
         <div className="pricing__cta fade-up">
           <p>Not sure which plan is right for you? Try a few free classes first.</p>
-          <a
-            href="#contact"
-            className="btn btn--primary btn--lg"
-            onClick={e => { e.preventDefault(); scrollTo('#contact') }}
-          >
-            Book Your Free Trial
-          </a>
+          <div className="pricing__cta-actions">
+            <a href={TRIAL_MAILTO} className="btn btn--primary btn--lg">
+              Book Your Free Trial
+            </a>
+            <a
+              href={ENROLL_ANCHOR}
+              className="btn btn--outline btn--lg"
+              onClick={e => { e.preventDefault(); scrollTo(ENROLL_ANCHOR) }}
+            >
+              Enroll Now
+            </a>
+          </div>
         </div>
       </div>
     </section>

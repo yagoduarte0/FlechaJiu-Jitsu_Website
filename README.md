@@ -135,6 +135,27 @@ export const MONTHLY_PLANS = [
 ]
 ```
 
+### Matrícula, e-mail e waiver — `src/data/links.js`
+
+Os CTAs da página saem todos daqui:
+
+```js
+export const ENROLL_URL = null   // link direto do formulário de cadastro (o mesmo do QR)
+export const WAIVER_PDF = null   // ex.: '/assets/docs/flecha-waiver.pdf'
+```
+
+| O que | Para onde vai |
+| --- | --- |
+| **Free Trial / Reserve My First Class** (nav, hero, "What To Expect", preços) | `TRIAL_MAILTO` — abre o e-mail já com assunto e corpo preenchidos; a pessoa só completa nome, idade, aula, horário e telefone |
+| **Enroll Now** (preços) e **Enroll** (nav) | rolam até o bloco do QR code no rodapé |
+| **Waiver** (rodapé) | baixa o PDF de `WAIVER_PDF` |
+
+- **QR code:** `public/assets/images/enroll-qr.png`. Para trocar, substitua o arquivo — o rodapé aponta para esse caminho fixo.
+- **`ENROLL_URL`:** enquanto for `null`, o rodapé mostra só o QR. Ao preencher com a URL do formulário, aparece também um botão clicável, para quem está no computador e não consegue apontar a câmera.
+- **`WAIVER_PDF`:** enquanto for `null`, o link aparece como "Waiver PDF — coming soon". Coloque o arquivo em `public/assets/docs/` e aponte o caminho aqui (sem o `public/`) para ativar o download.
+
+Para mudar o texto do e-mail automático, edite `TRIAL_BODY` no mesmo arquivo.
+
 ### Dados de contato — `src/components/Footer.jsx`
 
 Endereço, telefone, e-mail, Instagram e o mapa incorporado.
@@ -180,11 +201,12 @@ O site já inclui:
 ## Pendências
 
 - [ ] Foto de fundo do hero — `public/assets/images/hero-bg.jpg`, mínimo 1920×1080 (ver `ASSETS.md`)
-- [ ] URL do termo de responsabilidade — link "Sign Our Waiver" no rodapé
+- [ ] PDF do termo de responsabilidade — colocar em `public/assets/docs/` e apontar em `WAIVER_PDF` (`src/data/links.js`)
+- [ ] URL do formulário de cadastro — preencher `ENROLL_URL` em `src/data/links.js` para dar um botão clicável a quem está no computador
 - [ ] Google Business Profile — criar e verificar
 - [ ] Corrigir telefone e URL do site no Yelp e no Smoothcomp
 - [ ] Analytics (Cloudflare Web Analytics)
-- [ ] Formulário de captação de leads — hoje os botões de CTA apenas rolam até o rodapé
+- [ ] Formulário de captação de leads no próprio site — hoje a aula experimental sai por e-mail e a matrícula pelo QR code
 - [ ] Avaliações do Google na página — depende do Google Business Profile existir primeiro
 
 ---
