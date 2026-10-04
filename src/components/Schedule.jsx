@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { SCHEDULE_ROWS, DAYS, DAY_LABELS } from '../data/schedule'
+import { SCHEDULE_ROWS, DAYS, DAY_LABELS, SCHEDULE_PDF } from '../data/schedule'
 
 function ClassCell({ entry }) {
   if (!entry) return <td className="empty">—</td>
@@ -76,6 +76,16 @@ export default function Schedule() {
         <p className="schedule__note fade-up" style={{ '--delay': '0.15s' }}>
           * No Saturday classes during the summer months.
         </p>
+
+        <div className="schedule__download fade-up" style={{ '--delay': '0.2s' }}>
+          <a
+            href={SCHEDULE_PDF}
+            className="btn btn--outline"
+            download="Flecha-JiuJitsu-Schedule.pdf"
+          >
+            Download Schedule (PDF)
+          </a>
+        </div>
       </div>
     </section>
   )

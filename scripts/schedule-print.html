@@ -1,0 +1,117 @@
+<!doctype html>
+<!--
+  Grade de horarios para impressao/PDF. Os dados espelham src/data/schedule.js —
+  ao mudar a grade la, atualize as linhas abaixo e gere de novo:
+
+  msedge --headless --no-pdf-header-footer --print-to-pdf=Flecha-JiuJitsu-Schedule.pdf scripts/schedule-print.html
+  msedge --headless --hide-scrollbars --window-size=1240,940 --screenshot=Flecha-JiuJitsu-Schedule.png scripts/schedule-print.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Flecha Jiu-Jitsu — Daily Class Schedule</title>
+<style>
+  @page { size: A4 landscape; margin: 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1A1A1A;
+    background: #fff;
+    padding: 40px 52px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @media print { body { padding: 0; } }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 12px;
+    border-bottom: 4px solid #7CB87C;
+    margin-bottom: 22px;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { height: 52px; }
+  h1 { font-size: 26px; font-weight: 800; letter-spacing: 0.02em; }
+  h1 span { color: #5E9E5E; }
+  .subtitle { font-size: 14px; letter-spacing: 0.08em; color: #666; text-transform: uppercase; }
+
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 2px solid #DDD; text-align: center; vertical-align: middle; }
+  th {
+    background: #2E2E2E;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    padding: 11px 6px;
+  }
+  th:first-child { width: 22%; }
+  td { height: 92px; padding: 8px 6px; }
+  td.time { text-align: left; padding-left: 14px; font-weight: 700; font-size: 14px; background: #F6F6F6; }
+  td.empty { color: #CCC; }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+  }
+  .tag--adults  { background: #E3F1E3; color: #3F7A3F; }
+  .tag--kids    { background: #E2EBFB; color: #2F5BB8; }
+  .tag--juniors { background: #EDE3FA; color: #6B3FB0; }
+  td b { display: block; font-size: 15px; }
+  td small { display: block; font-size: 11px; color: #777; margin-top: 2px; }
+
+  .note { margin-top: 14px; font-size: 12px; font-style: italic; color: #888; }
+  .footer { margin-top: 6px; font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="../public/assets/logos/flecha-logo-vertical.png" alt="">
+      <h1>FLECHA <span>JIU-JITSU</span></h1>
+    </div>
+    <p class="subtitle">Daily Class Schedule</p>
+  </header>
+
+  <table>
+    <thead>
+      <tr><th>TIME</th><th>MON</th><th>TUES</th><th>WED</th><th>THURS</th><th>FRI</th><th>SAT</th></tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <p class="note">* No Saturday classes during the summer months.</p>
+  <p class="footer">flechajiu-jitsu.com · support@flechabjj.com</p>
+
+<script>
+  // Copia de src/data/schedule.js
+  const A  = (type) => ({ category: 'adults',  label: 'Adults',         type, level: 'Age 14+' })
+  const K  = (type) => ({ category: 'kids',    label: 'Kids Class',     type, level: 'Age 4–8' })
+  const J  = (type) => ({ category: 'juniors', label: 'Junior Class',   type, level: 'Age 9–13' })
+  const KJ = { category: 'kids', label: 'Kids & Juniors', type: 'Gi', level: 'Age 4–13' }
+
+  const ROWS = [
+    ['9:00 – 10:00 AM',  [A('Gi'), A('No Gi'), A('Gi'), A('No Gi'), A('Gi'), KJ]],
+    ['10:00 – 11:00 AM', [null, null, null, null, null, A('Open Mat')]],
+    ['5:00 – 5:50 PM',   [K('Gi'), K('No Gi'), K('Gi'), K('No Gi'), K('Gi'), null]],
+    ['6:00 – 6:50 PM',   [J('Gi'), J('No Gi'), J('Gi'), J('No Gi'), J('Gi'), null]],
+    ['7:00 – 8:00 PM',   [A('Gi'), A('No Gi'), A('Gi'), A('No Gi'), A('Gi'), null]],
+  ]
+
+  const cell = (e) => e
+    ? `<td><span class="tag tag--${e.category}">${e.label}</span><b>${e.type}</b><small>${e.level}</small></td>`
+    : '<td class="empty">—</td>'
+
+  document.getElementById('rows').innerHTML = ROWS
+    .map(([time, days]) => `<tr><td class="time">${time}</td>${days.map(cell).join('')}</tr>`)
+    .join('')
+</script>
+</body>
+</html>

@@ -48,3 +48,6 @@ export const SCHEDULE_ROWS = [
 
 export const DAYS = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat']
 export const DAY_LABELS = { mon: 'Mon', tues: 'Tues', wed: 'Wed', thurs: 'Thurs', fri: 'Fri', sat: 'Sat' }
+
+/* Versao para imprimir/baixar — gerada a partir de scripts/schedule-print.html. */
+export const SCHEDULE_PDF = '/assets/docs/Flecha-JiuJitsu-Schedule.pdf'
