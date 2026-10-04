@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import Academy from './components/Academy'
 import FirstClass from './components/FirstClass'
 import Pillars from './components/Pillars'
 import Professor from './components/Professor'
@@ -16,6 +17,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <Academy />
         <FirstClass />
         <Pillars />
         <Professor />

@@ -22,3 +22,6 @@ Thumbs.db
 
 # Cloudflare
 .wrangler/
+
+# Fotos que nao entraram no carrossel
+fotos-nao-usadas/

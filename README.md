@@ -27,6 +27,7 @@ O site apresenta a academia, o professor, a grade de horários e os planos de tr
 | Seção | Componente | Conteúdo |
 |---|---|---|
 | Hero | `Hero.jsx` | Chamada principal e CTA de aula grátis |
+| Academy | `Academy.jsx` | Carrossel de fotos e estrutura da academia |
 | What To Expect | `FirstClass.jsx` | Os 3 passos da primeira aula |
 | Why Jiu-Jitsu | `Pillars.jsx` | Técnica, resiliência mental, para todos |
 | Professor | `Professor.jsx` | Biografia do Pedro Galvão |

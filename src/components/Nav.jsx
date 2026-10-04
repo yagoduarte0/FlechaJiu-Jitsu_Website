@@ -3,6 +3,7 @@ import scrollTo from '../utils/scrollTo'
 import { TRIAL_MAILTO, ENROLL_ANCHOR } from '../data/links'
 
 const LINKS = [
+  { label: 'Academy',     href: '#academy'     },
   { label: 'First Class', href: '#first-class' },
   { label: 'About',       href: '#about'        },
   { label: 'Schedule',    href: '#schedule'     },
