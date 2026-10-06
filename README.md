@@ -201,7 +201,6 @@ O site já inclui:
 
 ## Pendências
 
-- [ ] Foto de fundo do hero — `public/assets/images/hero-bg.jpg`, mínimo 1920×1080 (ver `ASSETS.md`)
 - [ ] Nova foto do professor — `public/assets/images/pedro-galvao-professor.jpeg`, retrato, mínimo 600×800. Com esse nome exato, porque o componente e o JSON-LD do `index.html` apontam para ele. Enquanto não existir, a seção "About" mostra o placeholder "Photo Coming Soon"
 - [ ] PDF do termo de responsabilidade — colocar em `public/assets/docs/` e apontar em `WAIVER_PDF` (`src/data/links.js`)
 - [ ] URL do formulário de cadastro — preencher `ENROLL_URL` em `src/data/links.js` para dar um botão clicável a quem está no computador
