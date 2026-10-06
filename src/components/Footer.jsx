@@ -44,26 +44,19 @@ export default function Footer() {
             )}
           </div>
 
-          <div className="footer__waiver">
-            {WAIVER_PDF ? (
+          {WAIVER_PDF && (
+            <div className="footer__waiver">
               <a href={WAIVER_PDF} className="waiver-link" download>
                 <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
                   <path d="M6 1v6m0 0L3.5 4.5M6 7l2.5-2.5M2 10h8" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Download Our Waiver
               </a>
-            ) : (
-              <span className="waiver-link waiver-link--soon">
-                <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
-                  <path d="M6 1v6m0 0L3.5 4.5M6 7l2.5-2.5M2 10h8" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Waiver PDF — coming soon
-              </span>
-            )}
-            <p className="footer__waiver-note">
-              Print it, sign it, and bring it with you to your first class.
-            </p>
-          </div>
+              <p className="footer__waiver-note">
+                Print it, sign it, and bring it with you to your first class.
+              </p>
+            </div>
+          )}
 
           <div className="footer__logos">
             <img src="/assets/logos/flecha-logo-vertical.png" alt="Flecha Jiu-Jitsu" className="footer__logo-img footer__logo-img--mono" />

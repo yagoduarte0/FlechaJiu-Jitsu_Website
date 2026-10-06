@@ -28,5 +28,5 @@ export const ENROLL_ANCHOR = '#enroll'
 export const ENROLL_URL = null
 
 /* Waiver em PDF. Coloque o arquivo em public/assets/docs/ e aponte o caminho aqui;
-   enquanto for null o link aparece como "coming soon". */
+   enquanto for null o bloco do waiver nao aparece no rodape. */
 export const WAIVER_PDF = null

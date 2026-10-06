@@ -153,7 +153,7 @@ export const WAIVER_PDF = null   // ex.: '/assets/docs/flecha-waiver.pdf'
 
 - **QR code:** `public/assets/images/enroll-qr.png`. Para trocar, substitua o arquivo — o rodapé aponta para esse caminho fixo.
 - **`ENROLL_URL`:** enquanto for `null`, o rodapé mostra só o QR. Ao preencher com a URL do formulário, aparece também um botão clicável, para quem está no computador e não consegue apontar a câmera.
-- **`WAIVER_PDF`:** enquanto for `null`, o link aparece como "Waiver PDF — coming soon". Coloque o arquivo em `public/assets/docs/` e aponte o caminho aqui (sem o `public/`) para ativar o download.
+- **`WAIVER_PDF`:** enquanto for `null`, o bloco do waiver não aparece no rodapé. Coloque o arquivo em `public/assets/docs/` e aponte o caminho aqui (sem o `public/`) para ativar o download.
 
 Para mudar o texto do e-mail automático, edite `TRIAL_BODY` no mesmo arquivo.
 
