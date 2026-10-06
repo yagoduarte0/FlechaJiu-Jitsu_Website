@@ -62,7 +62,7 @@ export default function Professor() {
               sparked by his father's friendship with the renowned master.
             </p>
             <p className="professor__bio">
-              At 13, he joined <strong>IBJJF Hall of Famer Roberto "Roleta" Magalhães</strong> in
+              At 14, he joined <strong>IBJJF Hall of Famer Roberto "Roleta" Magalhães</strong> in
               Barra da Tijuca — one of the most technical and creative black belts in the history
               of the sport. Inspired by Roleta's mentorship, Pedro became a formidable competitor.
             </p>
