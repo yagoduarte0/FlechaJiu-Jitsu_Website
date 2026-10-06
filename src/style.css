@@ -569,6 +569,7 @@ a  { color: inherit; }
 .tag--tiny    { background: rgba(210,140,0,0.10);   color: #9A6200;       border: 1px solid rgba(210,140,0,0.25); }
 .tag--kids    { background: rgba(37,99,235,0.08);   color: #1D4ED8;       border: 1px solid rgba(37,99,235,0.2); }
 .tag--juniors { background: rgba(124,58,237,0.08);  color: #6D28D9;       border: 1px solid rgba(124,58,237,0.2); }
+.tag--women   { background: rgba(219,39,119,0.08);  color: #BE185D;       border: 1px solid rgba(219,39,119,0.2); }
 
 .schedule__hint { display: none; text-align: right; font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; letter-spacing: 0.05em; }
 .schedule__note { text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 24px; font-style: italic; }

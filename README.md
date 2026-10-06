@@ -117,7 +117,7 @@ export const SCHEDULE_ROWS = [
 
 | Campo | Função |
 |---|---|
-| `category` | Define a cor do selo via CSS (`tag--adults`). Valores: `adults`, `juniors`, `kids`, `tiny` |
+| `category` | Define a cor do selo via CSS (`tag--adults`). Valores: `adults`, `women`, `juniors`, `kids`, `tiny` |
 | `label` | Nome exibido no selo (ex.: `Adult BJJ`) |
 | `type` | `Gi`, `No Gi` ou `Open Mat` |
 | `level` | Texto abaixo do selo (ex.: `Age 7–10`, `All Levels`) |

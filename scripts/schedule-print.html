@@ -47,7 +47,7 @@
     padding: 11px 6px;
   }
   th:first-child { width: 22%; }
-  td { height: 92px; padding: 8px 6px; }
+  td { height: 80px; padding: 8px 6px; }
   td.time { text-align: left; padding-left: 14px; font-weight: 700; font-size: 14px; background: #F6F6F6; }
   td.empty { color: #CCC; }
 
@@ -64,6 +64,7 @@
   .tag--adults  { background: #E3F1E3; color: #3F7A3F; }
   .tag--kids    { background: #E2EBFB; color: #2F5BB8; }
   .tag--juniors { background: #EDE3FA; color: #6B3FB0; }
+  .tag--women   { background: #FBE3EE; color: #B0336E; }
   td b { display: block; font-size: 15px; }
   td small { display: block; font-size: 11px; color: #777; margin-top: 2px; }
 
@@ -96,10 +97,12 @@
   const K  = (type) => ({ category: 'kids',    label: 'Kids Class',     type, level: 'Age 4–8' })
   const J  = (type) => ({ category: 'juniors', label: 'Junior Class',   type, level: 'Age 9–13' })
   const KJ = { category: 'kids', label: 'Kids & Juniors', type: 'Gi', level: 'Age 4–13' }
+  const W  = { category: 'women', label: "Women's Class", type: 'Gi', level: 'Age 14+' }
 
   const ROWS = [
-    ['9:00 – 10:00 AM',  [A('Gi'), A('No Gi'), A('Gi'), A('No Gi'), A('Gi'), KJ]],
-    ['10:00 – 11:00 AM', [null, null, null, null, null, A('Open Mat')]],
+    ['9:00 – 10:00 AM',     [A('Gi'), A('No Gi'), A('Gi'), A('No Gi'), A('Gi'), W]],
+    ['10:00 – 11:00 AM',    [null, null, null, null, null, KJ]],
+    ['11:00 AM – 12:00 PM', [null, null, null, null, null, A('Open Mat')]],
     ['5:00 – 5:50 PM',   [K('Gi'), K('No Gi'), K('Gi'), K('No Gi'), K('Gi'), null]],
     ['6:00 – 6:50 PM',   [J('Gi'), J('No Gi'), J('Gi'), J('No Gi'), J('Gi'), null]],
     ['7:00 – 8:00 PM',   [A('Gi'), A('No Gi'), A('Gi'), A('No Gi'), A('Gi'), null]],
