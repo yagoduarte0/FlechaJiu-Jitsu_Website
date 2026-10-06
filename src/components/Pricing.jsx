@@ -1,6 +1,29 @@
 import scrollTo from '../utils/scrollTo'
 import { TRIAL_MAILTO, ENROLL_ANCHOR } from '../data/links'
-import { MONTHLY_PLANS, PREPAID_PLANS } from '../data/pricing'
+import { MONTHLY_PLANS, WOMEN_PLANS, PREPAID_PLANS } from '../data/pricing'
+
+function PlanList({ plans }) {
+  return (
+    <div className="pricing-list">
+      {plans.map(({ name, price, discount, featured }) => (
+        <div
+          key={name}
+          className={`pricing-row${featured ? ' pricing-row--featured' : ''}`}
+        >
+          <div className="pricing-row__info">
+            <span className="pricing-row__name">{name}</span>
+            {discount && (
+              <span className="pricing-row__discount">{discount}</span>
+            )}
+          </div>
+          <span className="pricing-row__price">
+            ${price}<small>/mo</small>
+          </span>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 export default function Pricing() {
   return (
@@ -17,24 +40,10 @@ export default function Pricing() {
 
           <div className="pricing-block fade-up">
             <h3 className="pricing-block__title">Monthly Plans</h3>
-            <div className="pricing-list">
-              {MONTHLY_PLANS.map(({ name, price, discount, featured }) => (
-                <div
-                  key={name}
-                  className={`pricing-row${featured ? ' pricing-row--featured' : ''}`}
-                >
-                  <div className="pricing-row__info">
-                    <span className="pricing-row__name">{name}</span>
-                    {discount && (
-                      <span className="pricing-row__discount">{discount}</span>
-                    )}
-                  </div>
-                  <span className="pricing-row__price">
-                    ${price}<small>/mo</small>
-                  </span>
-                </div>
-              ))}
-            </div>
+            <PlanList plans={MONTHLY_PLANS} />
+
+            <h3 className="pricing-block__title pricing-block__title--spaced">Women's Class — Monthly</h3>
+            <PlanList plans={WOMEN_PLANS} />
           </div>
 
           <div className="pricing-block fade-up" style={{ '--delay': '0.15s' }}>

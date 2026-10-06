@@ -136,6 +136,8 @@ export const MONTHLY_PLANS = [
 ]
 ```
 
+`WOMEN_PLANS` segue o mesmo formato, para a aula feminina ($100/mês, com os mesmos descontos de família: 5%, 10%, 15%, 20%).
+
 ### Matrícula, e-mail e waiver — `src/data/links.js`
 
 Os CTAs da página saem todos daqui:

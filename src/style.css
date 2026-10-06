@@ -578,6 +578,7 @@ a  { color: inherit; }
 .pricing__grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: start; }
 
 .pricing-block__title { font-family: var(--display); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.pricing-block__title--spaced { margin-top: 40px; }
 .pricing-list { display: flex; flex-direction: column; gap: 2px; }
 .pricing-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 18px; background-color: var(--bg-card); transition: background-color var(--ease); }
 .pricing-row:hover { background-color: #e8e8e8; }
