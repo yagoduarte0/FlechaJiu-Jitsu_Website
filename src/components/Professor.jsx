@@ -26,7 +26,7 @@ export default function Professor() {
             <div className="professor__photo-wrap">
               {!photoError && (
                 <img
-                  src="/assets/images/pedro-galvao-professor.jpeg"
+                  src="/assets/images/pedro-galvao-flecha-professor.jpeg"
                   alt="Professor Pedro Galvão"
                   className="professor__photo"
                   onLoad={() => setPhotoLoaded(true)}

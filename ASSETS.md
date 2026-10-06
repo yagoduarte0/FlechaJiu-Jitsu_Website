@@ -18,5 +18,5 @@
 | Filename | Description |
 |---|---|
 | `hero-bg.jpg` | Full-screen hero background photo. Recommended: 1920x1080px min. |
-| `pedro-galvao-professor.jpeg` | Professor portrait photo. Recommended: portrait orientation, 600x800px min. Keep this exact filename — the component and the JSON-LD point to it. While missing, the About section shows a "Photo Coming Soon" placeholder. |
+| `pedro-galvao-flecha-professor.jpeg` | Professor portrait photo. Recommended: portrait orientation, 600x800px min. Keep this exact filename — the component and the JSON-LD point to it. When swapping the photo, give it a new filename (and update both references) so Google drops the cached old image. While missing, the About section shows a "Photo Coming Soon" placeholder. |
 | `enroll-qr.png` | QR code of the enrollment form, shown in the footer. Replace the file to change where it points. |
