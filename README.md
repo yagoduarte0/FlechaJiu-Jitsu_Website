@@ -20,7 +20,7 @@ Landing page de página única para a academia de Jiu-Jitsu brasileiro do Profes
 
 O site apresenta a academia, o professor, a grade de horários e os planos de treino, com o objetivo de converter visitantes em alunos através da aula experimental gratuita.
 
-**Público-alvo:** moradores de Henderson e Las Vegas buscando Jiu-Jitsu para adultos e crianças (a partir de 3 anos).
+**Público-alvo:** moradores de Henderson e Las Vegas buscando Jiu-Jitsu para adultos e crianças (a partir de 4 anos).
 
 ### Seções
 

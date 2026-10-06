@@ -31,7 +31,7 @@ const PILLARS = [
       </svg>
     ),
     title: 'For Everyone',
-    text: 'Classes from age 3 to adult, all skill levels. Jiu-Jitsu is a journey open to all.',
+    text: 'Classes from age 4 to adult, all skill levels. Jiu-Jitsu is a journey open to all.',
     delay: '0.2s',
   },
 ]
