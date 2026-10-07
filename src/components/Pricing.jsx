@@ -1,6 +1,8 @@
 import scrollTo from '../utils/scrollTo'
 import { TRIAL_MAILTO, ENROLL_ANCHOR } from '../data/links'
-import { MONTHLY_PLANS, WOMEN_PLANS, PREPAID_PLANS } from '../data/pricing'
+import {
+  MONTHLY_PLANS, WOMEN_PLANS, PREPAID_PLANS, WOMEN_PREPAID_PLANS, PRICING_PDF,
+} from '../data/pricing'
 
 function PlanList({ plans }) {
   return (
@@ -19,6 +21,25 @@ function PlanList({ plans }) {
           <span className="pricing-row__price">
             ${price}<small>/mo</small>
           </span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function PrepaidCards({ plans }) {
+  return (
+    <div className="prepaid-cards">
+      {plans.map(({ name, duration, price, highlight }) => (
+        <div
+          key={name}
+          className={`prepaid-card${highlight ? ' prepaid-card--highlight' : ''}`}
+        >
+          <div>
+            <span className="prepaid-card__name">{name}</span>
+            <span className="prepaid-card__duration">{duration}</span>
+          </div>
+          <span className="prepaid-card__price">{price}</span>
         </div>
       ))}
     </div>
@@ -48,20 +69,10 @@ export default function Pricing() {
 
           <div className="pricing-block fade-up" style={{ '--delay': '0.15s' }}>
             <h3 className="pricing-block__title">Prepaid Plans</h3>
-            <div className="prepaid-cards">
-              {PREPAID_PLANS.map(({ name, duration, price, highlight }) => (
-                <div
-                  key={name}
-                  className={`prepaid-card${highlight ? ' prepaid-card--highlight' : ''}`}
-                >
-                  <div>
-                    <span className="prepaid-card__name">{name}</span>
-                    <span className="prepaid-card__duration">{duration}</span>
-                  </div>
-                  <span className="prepaid-card__price">{price}</span>
-                </div>
-              ))}
-            </div>
+            <PrepaidCards plans={PREPAID_PLANS} />
+
+            <h3 className="pricing-block__title pricing-block__title--spaced">Women's Class — Prepaid</h3>
+            <PrepaidCards plans={WOMEN_PREPAID_PLANS} />
 
             <div className="discount-notice">
               <span className="discount-notice__badge">5% OFF</span>
@@ -72,6 +83,16 @@ export default function Pricing() {
             </div>
           </div>
 
+        </div>
+
+        <div className="pricing__download fade-up">
+          <a
+            href={PRICING_PDF}
+            className="btn btn--outline"
+            download="Flecha-JiuJitsu-Pricing.pdf"
+          >
+            Download Pricing (PDF)
+          </a>
         </div>
 
         <div className="pricing__cta fade-up">

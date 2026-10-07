@@ -1,0 +1,115 @@
+<!doctype html>
+<!--
+  Tabela de precos para impressao/PDF. Os dados espelham src/data/pricing.js —
+  ao mudar os precos la, atualize as listas abaixo e gere de novo:
+
+  msedge --headless --no-pdf-header-footer --print-to-pdf=public/assets/docs/Flecha-JiuJitsu-Pricing.pdf scripts/pricing-print.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Flecha Jiu-Jitsu — Training Plans</title>
+<style>
+  @page { size: A4 portrait; margin: 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1A1A1A;
+    background: #fff;
+    padding: 40px 52px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @media print { body { padding: 0; } }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 12px;
+    border-bottom: 4px solid #7CB87C;
+    margin-bottom: 26px;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { height: 52px; }
+  h1 { font-size: 26px; font-weight: 800; letter-spacing: 0.02em; }
+  h1 span { color: #5E9E5E; }
+  .subtitle { font-size: 14px; letter-spacing: 0.08em; color: #666; text-transform: uppercase; }
+
+  h2 {
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 22px 0 10px;
+  }
+  h2:first-of-type { margin-top: 0; }
+
+  table { width: 100%; border-collapse: collapse; }
+  td { border-bottom: 2px solid #EEE; padding: 11px 14px; font-size: 14px; }
+  td.price { text-align: right; font-weight: 800; font-size: 16px; white-space: nowrap; }
+  td small { color: #777; font-weight: 400; margin-left: 8px; font-size: 12px; }
+  tr.featured td { background: #EEF6EE; }
+  tr.featured td:first-child { border-left: 4px solid #7CB87C; }
+
+  .notice {
+    margin-top: 26px;
+    padding: 12px 16px;
+    border: 2px solid #7CB87C;
+    font-size: 13px;
+  }
+  .notice b { color: #3F7A3F; }
+  .footer { margin-top: 16px; font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="../public/assets/logos/flecha-logo-vertical.png" alt="">
+      <h1>FLECHA <span>JIU-JITSU</span></h1>
+    </div>
+    <p class="subtitle">Training Plans</p>
+  </header>
+
+  <div id="content"></div>
+
+  <p class="notice"><b>5% OFF</b> — Veterans &amp; First Responders receive 5% off any plan.</p>
+  <p class="footer">flechajiu-jitsu.com · support@flechabjj.com</p>
+
+<script>
+  // Copia de src/data/pricing.js
+  const MONTHLY_PLANS = [
+    { name: 'Single Student',      price: 149, discount: null,  featured: true },
+    { name: 'Family — 2 Members',  price: 283, discount: '5% off'  },
+    { name: 'Family — 3 Members',  price: 402, discount: '10% off' },
+    { name: 'Family — 4 Members',  price: 506, discount: '15% off' },
+    { name: 'Family — 5+ Members', price: 596, discount: '20% off' },
+  ]
+  const WOMEN_PLANS = [
+    { name: "Women's Class", price: 100, discount: null, featured: true },
+  ]
+  const PREPAID_PLANS = [
+    { name: 'Trimester', duration: '3 months',  price: '$402'   },
+    { name: 'Semester',  duration: '6 months',  price: '$759',  highlight: true },
+    { name: 'Annual',    duration: '12 months', price: '$1,430' },
+  ]
+  const WOMEN_PREPAID_PLANS = [
+    { name: 'Trimester', duration: '3 months',  price: '$270' },
+    { name: 'Annual',    duration: '12 months', price: '$960', highlight: true },
+  ]
+
+  const monthly = (plans) => plans.map(p =>
+    `<tr class="${p.featured ? 'featured' : ''}"><td>${p.name}${p.discount ? `<small>${p.discount}</small>` : ''}</td><td class="price">$${p.price}/mo</td></tr>`
+  ).join('')
+  const prepaid = (plans) => plans.map(p =>
+    `<tr class="${p.highlight ? 'featured' : ''}"><td>${p.name}<small>${p.duration}</small></td><td class="price">${p.price}</td></tr>`
+  ).join('')
+
+  document.getElementById('content').innerHTML = `
+    <h2>Monthly Plans</h2><table>${monthly(MONTHLY_PLANS)}</table>
+    <h2>Prepaid Plans</h2><table>${prepaid(PREPAID_PLANS)}</table>
+    <h2>Women's Class — Monthly</h2><table>${monthly(WOMEN_PLANS)}</table>
+    <h2>Women's Class — Prepaid</h2><table>${prepaid(WOMEN_PREPAID_PLANS)}</table>
+  `
+</script>
+</body>
+</html>

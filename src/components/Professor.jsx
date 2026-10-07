@@ -8,7 +8,7 @@ const STATS = [
 
 const TIMELINE = [
   { year: '1991',  text: 'Began training under Master Fernando Pinduka — Monte Libano' },
-  { year: '1996', text: 'Joined IBJJF Hall of Famer Roberto "Roleta" Magalhães — Barra da Tijuca' },
+  { year: '1997', text: 'Joined IBJJF Hall of Famer Roberto "Roleta" Magalhães — Barra da Tijuca' },
   { year: '2006',   text: 'Black belt under Master Carlos Gracie Jr. at age 23' },
   { year: 'Today',  text: '5th-degree black belt, teaching in Henderson, Nevada' },
 ]
