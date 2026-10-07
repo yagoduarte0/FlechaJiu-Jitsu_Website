@@ -23,4 +23,6 @@ export const WOMEN_PREPAID_PLANS = [
   { name: 'Annual',    duration: '12 months', price: '$960', highlight: true },
 ]
 
+export const DROP_IN_FEE = 30
+
 export const PRICING_PDF = '/assets/docs/Flecha-JiuJitsu-Pricing.pdf'

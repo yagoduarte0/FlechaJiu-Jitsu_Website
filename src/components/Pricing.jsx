@@ -1,7 +1,7 @@
 import scrollTo from '../utils/scrollTo'
 import { TRIAL_MAILTO, ENROLL_ANCHOR } from '../data/links'
 import {
-  MONTHLY_PLANS, WOMEN_PLANS, PREPAID_PLANS, WOMEN_PREPAID_PLANS, PRICING_PDF,
+  MONTHLY_PLANS, WOMEN_PLANS, PREPAID_PLANS, WOMEN_PREPAID_PLANS, DROP_IN_FEE, PRICING_PDF,
 } from '../data/pricing'
 
 function PlanList({ plans }) {
@@ -73,6 +73,18 @@ export default function Pricing() {
 
             <h3 className="pricing-block__title pricing-block__title--spaced">Women's Class — Prepaid</h3>
             <PrepaidCards plans={WOMEN_PREPAID_PLANS} />
+
+            <h3 className="pricing-block__title pricing-block__title--spaced">Drop-In</h3>
+            <div className="pricing-list">
+              <div className="pricing-row">
+                <div className="pricing-row__info">
+                  <span className="pricing-row__name">Drop-In Fee</span>
+                </div>
+                <span className="pricing-row__price">
+                  ${DROP_IN_FEE}<small>/class</small>
+                </span>
+              </div>
+            </div>
 
             <div className="discount-notice">
               <span className="discount-notice__badge">5% OFF</span>

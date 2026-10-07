@@ -96,6 +96,7 @@
     { name: 'Trimester', duration: '3 months',  price: '$270' },
     { name: 'Annual',    duration: '12 months', price: '$960', highlight: true },
   ]
+  const DROP_IN_FEE = 30
 
   const monthly = (plans) => plans.map(p =>
     `<tr class="${p.featured ? 'featured' : ''}"><td>${p.name}${p.discount ? `<small>${p.discount}</small>` : ''}</td><td class="price">$${p.price}/mo</td></tr>`
@@ -109,6 +110,7 @@
     <h2>Prepaid Plans</h2><table>${prepaid(PREPAID_PLANS)}</table>
     <h2>Women's Class — Monthly</h2><table>${monthly(WOMEN_PLANS)}</table>
     <h2>Women's Class — Prepaid</h2><table>${prepaid(WOMEN_PREPAID_PLANS)}</table>
+    <h2>Drop-In</h2><table><tr><td>Drop-In Fee</td><td class="price">$${DROP_IN_FEE}/class</td></tr></table>
   `
 </script>
 </body>
