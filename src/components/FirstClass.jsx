@@ -3,8 +3,8 @@ import { TRIAL_MAILTO } from '../data/links'
 const STEPS = [
   {
     num: '1',
-    title: 'Show Up & Settle In',
-    text: "Come a few minutes early in a t-shirt and shorts — no gear required. We keep loaner gis on hand, so a missing kimono is never a reason to skip your first class.",
+    title: 'Put On the Gi',
+    text: "Arrive a few minutes early and suit up in the traditional kimono. Don't own one yet? We keep loaner gis on hand, and a coach will show you how to tie your belt.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <ellipse cx="14" cy="13" rx="4.5" ry="6.5" transform="rotate(-18 14 13)" stroke="currentColor" strokeWidth="1.5"/>
@@ -14,8 +14,8 @@ const STEPS = [
   },
   {
     num: '2',
-    title: 'Break Down the Basics',
-    text: 'A coach walks you through one or two core movements at a pace that makes sense, explaining the why behind each detail.',
+    title: 'Learn the Grips',
+    text: 'Gi Jiu-Jitsu starts at the collar and sleeves. A coach teaches you how to grip, break posture and control — the foundation of every sweep and submission.',
     icon: (
       <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M20 6a9.5 9.5 0 0 0-5 17.6V27h10v-3.4A9.5 9.5 0 0 0 20 6Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
@@ -25,8 +25,8 @@ const STEPS = [
   },
   {
     num: '3',
-    title: 'Move With a Partner',
-    text: "You'll try the technique slowly with a training partner who still remembers exactly how their own first class felt.",
+    title: 'Drill on the Mats',
+    text: "You'll drill the technique slowly with a partner and feel how the gi turns leverage and patience — not strength — into control.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M15 14a8.5 8.5 0 1 0 8.5 8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -48,7 +48,7 @@ export default function FirstClass() {
             What To <span className="text--green">Expect</span>
           </h2>
           <p className="first-class__subtitle">
-            Never grappled before? Good — that's exactly who this is for. Here's how a first visit actually goes.
+            Never worn a gi before? Good — that's exactly who this is for. Here's how your first Jiu-Jitsu class goes.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function FirstClass() {
           <a href={TRIAL_MAILTO} className="btn btn--primary btn--lg">
             Reserve My First Class
           </a>
-          <p className="first-class__disclaimer">No gear, no experience, no pressure required.</p>
+          <p className="first-class__disclaimer">No kimono, no experience, no pressure required.</p>
         </div>
       </div>
     </section>

@@ -20,7 +20,8 @@ export const PREPAID_PLANS = [
 /* Pre-pagos da aula feminina, com a mesma proporcao de desconto dos planos acima. */
 export const WOMEN_PREPAID_PLANS = [
   { name: 'Trimester', duration: '3 months',  price: '$270' },
-  { name: 'Annual',    duration: '12 months', price: '$960', highlight: true },
+  { name: 'Semester',  duration: '6 months',  price: '$510', highlight: true },
+  { name: 'Annual',    duration: '12 months', price: '$960' },
 ]
 
 export const DROP_IN_FEE = 30
