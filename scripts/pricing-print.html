@@ -85,16 +85,12 @@
     { name: 'Family — 5+ Members', price: 596, discount: '20% off' },
   ]
   const WOMEN_PLANS = [
-    { name: "Women's Class", price: 100, discount: null, featured: true },
+    { name: 'Monthly', price: 100, discount: null, featured: true },
   ]
   const PREPAID_PLANS = [
     { name: 'Trimester', duration: '3 months',  price: '$402'   },
     { name: 'Semester',  duration: '6 months',  price: '$759',  highlight: true },
     { name: 'Annual',    duration: '12 months', price: '$1,430' },
-  ]
-  const WOMEN_PREPAID_PLANS = [
-    { name: 'Trimester', duration: '3 months',  price: '$270' },
-    { name: 'Annual',    duration: '12 months', price: '$960', highlight: true },
   ]
   const DROP_IN_FEE = 30
 
@@ -108,8 +104,7 @@
   document.getElementById('content').innerHTML = `
     <h2>Monthly Plans</h2><table>${monthly(MONTHLY_PLANS)}</table>
     <h2>Prepaid Plans</h2><table>${prepaid(PREPAID_PLANS)}</table>
-    <h2>Women's Class — Monthly</h2><table>${monthly(WOMEN_PLANS)}</table>
-    <h2>Women's Class — Prepaid</h2><table>${prepaid(WOMEN_PREPAID_PLANS)}</table>
+    <h2>Women's Class</h2><table>${monthly(WOMEN_PLANS)}</table>
     <h2>Drop-In</h2><table><tr><td>Drop-In Fee</td><td class="price">$${DROP_IN_FEE}/class</td></tr></table>
   `
 </script>
